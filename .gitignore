@@ -49,4 +49,4 @@ venv.bak/
 .idea
 
 .DS_Store
-!/pitches.db
+!/api/pitches.db
