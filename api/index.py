@@ -8,11 +8,23 @@ CORS(app)
 
 DATABASE = 'database/pitches.db'
 
+def get_db():
+    db = getattr(g, '_database', None)
+    if db is None:
+        try:
+            db = g._database = sqlite3.connect(DATABASE)
+            logging.info(f"Connected to database at {DATABASE}")
+        except sqlite3.Error as e:
+            logging.error(f"Database connection error: {e}")
+            raise e
+    return db
+
 @app.teardown_appcontext
 def close_connection(exception):
     db = getattr(g, '_database', None)
     if db is not None:
         db.close()
+
 @app.route("/")
 def hello_world():
     return "Pitches Database"
@@ -37,25 +49,12 @@ def list_tables():
         print(f"General error: {e}")
         return f"General error: {e}"
 
-def get_db():
-    db = getattr(g, '_database', None)
-    if db is None:
-        try:
-            db = g._database = sqlite3.connect(DATABASE)
-            logging.info(f"Connected to database at {DATABASE}")
-        except sqlite3.Error as e:
-            logging.error(f"Database connection error: {e}")
-            raise e
-    return db
 
-
-
-
-@players_bp.route("/players")
+@app.route("/api/players")
 def get_players():
     db = get_db()
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM players")  # Adjust table name as needed
+    cursor.execute("SELECT * FROM players")
     players = cursor.fetchall()
     return jsonify({"players": players})
 
