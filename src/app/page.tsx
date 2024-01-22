@@ -1,4 +1,4 @@
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle.tsx';
+import { ColorSchemeToggle } from '../components/ColorSchemeToggle';
 
 export default function HomePage() {
     return (
