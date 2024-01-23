@@ -95,10 +95,10 @@ export default function Header() {
         <Box pb={60}>
             <header className={classes.header}>
                 <Group justify="space-between" h="100%">
-                    <Image component={NextImage} src={Logo} alt="Logo" h={60} ml={15}/>
+                    <Image component={NextImage} src={Logo} alt="Logo" h={60} ml={15} priority={true}/>
 
                     <Group h="100%" gap={0} visibleFrom="sm">
-                        <a href="#" className={classes.link}>
+                        <a href="/" className={classes.link}>
                             Home
                         </a>
                         <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
@@ -145,11 +145,11 @@ export default function Header() {
                                 </div>
                             </HoverCard.Dropdown>
                         </HoverCard>
-                        <a href="#" className={classes.link}>
-                            Learn
+                        <a href="/players" className={classes.link}>
+                            Players
                         </a>
-                        <a href="#" className={classes.link}>
-                            Academy
+                        <a href="/about" className={classes.link}>
+                            About
                         </a>
                     </Group>
 
@@ -188,11 +188,11 @@ export default function Header() {
                         </Center>
                     </UnstyledButton>
                     <Collapse in={linksOpened}>{links}</Collapse>
-                    <a href="#" className={classes.link}>
-                        Learn
+                    <a href="/players" className={classes.link}>
+                        Players
                     </a>
-                    <a href="#" className={classes.link}>
-                        Academy
+                    <a href="/about" className={classes.link}>
+                        About
                     </a>
 
                     <Divider my="sm" />

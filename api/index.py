@@ -49,14 +49,28 @@ def list_tables():
         print(f"General error: {e}")
         return f"General error: {e}"
 
-
 @app.route("/api/players")
 def get_players():
     db = get_db()
     cursor = db.cursor()
     cursor.execute("SELECT * FROM players")
-    players = cursor.fetchall()
+    rows = cursor.fetchall()
+    column_names = [column[0] for column in cursor.description]
+    players = [dict(zip(column_names, row)) for row in rows]
     return jsonify({"players": players})
+
+@app.route("/api/players/<int:player_id>")
+def get_player_by_id(player_id):
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM players WHERE player_id = ?", (player_id,))
+    player = cursor.fetchone()
+    if player:
+        column_names = [column[0] for column in cursor.description]
+        player_data = dict(zip(column_names, player))
+        return jsonify(player_data)
+    else:
+        return jsonify({"error": "Player not found"}), 404
 
 if __name__ == "__main__":
     app.run()

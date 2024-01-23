@@ -22,8 +22,8 @@ export default function RootLayout({ children }: { children: any }) {
             />
             <title>Nationals Web Development Assignment</title>
         </head>
-        <body>
-        <MantineProvider theme={theme}>
+        <body suppressHydrationWarning={true}>
+        <MantineProvider theme={theme} >
             <Notifications position="top-right"/>
             {children}
         </MantineProvider>
