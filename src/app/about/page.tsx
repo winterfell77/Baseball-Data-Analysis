@@ -1,5 +1,5 @@
-import Header from '../../components/Header';
 import { Text } from '@mantine/core';
+import Header from '../../components/Header';
 
 export default function About() {
   return (

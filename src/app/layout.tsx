@@ -1,8 +1,8 @@
 import React from 'react';
+
+import { Notifications } from '@mantine/notifications';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { theme } from '@/theme';
-import { Notifications } from '@mantine/notifications';
-
 import '@mantine/core/styles.css';
 import '@mantine/notifications/styles.css';
 import 'mantine-datatable/styles.css';
@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: any }) {
         />
         <title>Nationals Web Development Assignment</title>
       </head>
-      <body suppressHydrationWarning={true}>
+      <body>
         <MantineProvider theme={theme}>
           <Notifications position="top-right" />
           {children}

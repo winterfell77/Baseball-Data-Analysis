@@ -1,11 +1,11 @@
-import { Combobox } from '@mantine/core';
 import Header from '../components/Header';
-import ToggleTheme from '@/src/components/ToggleTheme';
+import Footer from '../components/Footer';
 
 export default function HomePage() {
   return (
     <>
       <Header />
+      <Footer />
     </>
   );
 }

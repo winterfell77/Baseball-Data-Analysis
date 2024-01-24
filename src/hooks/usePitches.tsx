@@ -37,7 +37,6 @@ export const usePitches = (pitcherId: number | null): UsePitchDataResult => {
   };
 
   useEffect(() => {
-
     if (pitcherId === null || pitcherId === undefined) {
       setIsLoading(false);
       setPitchData([]);
