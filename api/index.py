@@ -2,6 +2,7 @@ import sqlite3
 from flask import Flask, g, jsonify
 from flask_cors import CORS
 import logging
+import pandas as pd
 
 app = Flask(__name__)
 CORS(app)
@@ -71,6 +72,34 @@ def get_player_by_id(player_id):
         return jsonify(player_data)
     else:
         return jsonify({"error": "Player not found"}), 404
+
+def calculate_aggregated_stats(df):
+    result = df.groupby('pitch_type').apply(lambda x: pd.Series({
+        'number_of_pitches': x.shape[0],
+        'pitch_usage_percentage': (x.shape[0] / df.shape[0]) * 100,
+        'average_speed': x['release_speed'].mean(),
+        'average_horizontal_break': x['horizontal_break'].mean(),
+        'average_vertical_break': x['induced_vertical_break'].mean(),
+        'average_spin_rate': x['spin_rate'].mean(),
+        'average_exit_speed': x['hit_exit_speed'].mean(),
+        'average_launch_angle': x['hit_launch_angle'].mean()
+    })).reset_index()
+
+    return result.fillna(0).to_dict(orient='records')
+
+@app.route('/api/pitches/<int:pitcher_id>')
+def get_pitches_by_pitcher(pitcher_id):
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("SELECT pitch_type, spin_rate, horizontal_break, release_speed, induced_vertical_break, hit_exit_speed, hit_launch_angle FROM pitches WHERE pitcher_id = ?", (pitcher_id,))
+    pitches = cursor.fetchall()
+
+
+    df = pd.DataFrame(pitches, columns=['pitch_type', 'spin_rate', 'horizontal_break', 'release_speed', 'induced_vertical_break', 'hit_exit_speed', 'hit_launch_angle'])
+    df['pitch_type'] = df['pitch_type'].fillna('Undetermined')
+
+    aggregated_stats = calculate_aggregated_stats(df)
+    return jsonify(aggregated_stats)
 
 if __name__ == "__main__":
     app.run()
