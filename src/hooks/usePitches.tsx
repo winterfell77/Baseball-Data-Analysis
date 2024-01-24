@@ -18,7 +18,7 @@ interface UsePitchDataResult {
   error: string | null;
 }
 
-export const usePitches = (pitcherId: number): UsePitchDataResult => {
+export const usePitches = (pitcherId: number | null): UsePitchDataResult => {
   const [pitchData, setPitchData] = useState<PitchInfo[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -37,6 +37,13 @@ export const usePitches = (pitcherId: number): UsePitchDataResult => {
   };
 
   useEffect(() => {
+
+    if (pitcherId === null || pitcherId === undefined) {
+      setIsLoading(false);
+      setPitchData([]);
+      return;
+    }
+
     const fetchPitchData = async () => {
       try {
         const response = await fetch(`/api/pitches/${pitcherId}`);
