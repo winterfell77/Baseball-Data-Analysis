@@ -1,4 +1,4 @@
-import { Container, Group, ActionIcon, rem, Image, Text, Divider } from '@mantine/core';
+import { Container, Group, ActionIcon, rem, Image, Text, Divider, Box } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
 import classes from './Footer.module.css';
 import NextImage from 'next/image';
@@ -6,7 +6,7 @@ import Logo from '@/public/Logo.png';
 
 export default function Footer() {
   return (
-    <div className={classes.footer}>
+    <Box className={classes.footer} pt={20}>
       <Container className={classes.inner}>
         <Image
           component={NextImage}
@@ -18,8 +18,8 @@ export default function Footer() {
           style={{ maxWidth: '15%', height: '70' }}
         />
         <Group gap={0} className={classes.links} justify="flex-end" wrap="nowrap">
-          <Text size="sm">National's Social Media</Text>
-          <Divider orientation="vertical" ml="10" size="sm" />
+          <Text size="sm">Nationals Social Media</Text>
+          <Divider orientation="vertical" ml="20" size="sm" mr={10} />
           <ActionIcon
             size="lg"
             color="gray"
@@ -49,6 +49,6 @@ export default function Footer() {
           </ActionIcon>
         </Group>
       </Container>
-    </div>
+    </Box>
   );
 }

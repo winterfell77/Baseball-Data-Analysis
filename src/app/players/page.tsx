@@ -8,9 +8,9 @@ import {
   Divider,
   ComboboxItem,
   OptionsFilter,
-  Box,
+  Text,
+  Title,
   Container,
-  Paper,
 } from '@mantine/core';
 import Debug from 'debug';
 import PlayerTable from '@/src/components/PlayerTable';
@@ -67,7 +67,7 @@ export default function Players() {
   return (
     <div className={classes.appcontainer}>
       <Header />
-      <Paper mx={400}>
+      <Container>
         <Group justify="center" gap="xl" grow mb="3rem">
           <Select
             radius="md"
@@ -111,7 +111,10 @@ export default function Players() {
           />
         </Group>
         <Divider my="md" mb="3rem" />
-      </Paper>
+        <Title mb="3rem">
+          {selectedPlayerId ? `${selectedPlayerName}'s Pitching Table` : null}
+        </Title>
+      </Container>
 
       <PlayerTable playerId={selectedPlayerId ? Number(selectedPlayerId) : null} />
 

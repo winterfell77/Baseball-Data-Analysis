@@ -95,7 +95,6 @@ def get_pitches_by_pitcher(pitcher_id):
     cursor.execute("SELECT pitch_type, spin_rate, horizontal_break, release_speed, induced_vertical_break, hit_exit_speed, hit_launch_angle FROM pitches WHERE pitcher_id = ?", (pitcher_id,))
     pitches = cursor.fetchall()
 
-
     df = pd.DataFrame(pitches, columns=['pitch_type', 'spin_rate', 'horizontal_break', 'release_speed', 'induced_vertical_break', 'hit_exit_speed', 'hit_launch_angle'])
     df['pitch_type'] = df['pitch_type'].fillna('Undetermined')
 
