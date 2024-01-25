@@ -7,7 +7,7 @@ export default function About() {
   return (
     <div className={classes.appcontainer}>
       <Header />
-      <Text>Coming soon...</Text>
+
       <Footer />
     </div>
   );

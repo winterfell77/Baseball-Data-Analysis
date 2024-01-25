@@ -2,15 +2,10 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import classes from './HomePage.module.css';
 import {
-  Image,
   Container,
-  Title,
   Button,
   Group,
   Text,
-  List,
-  ThemeIcon,
-  rem,
   Space,
 } from '@mantine/core';
 export default function HomePage() {
