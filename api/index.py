@@ -85,6 +85,7 @@ def calculate_aggregated_stats(df):
         'average_launch_angle': x['hit_launch_angle'].mean()
     })).reset_index()
 
+    result = result[~((result['pitch_type'] == 'Undetermined') & (result['number_of_pitches'] == 0))]
     return result.fillna(0).to_dict(orient='records')
 
 @app.route('/api/pitches/<int:pitcher_id>')

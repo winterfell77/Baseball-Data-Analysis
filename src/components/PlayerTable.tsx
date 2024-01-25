@@ -5,7 +5,7 @@ import { PitchInfo, usePitches } from '@/src/hooks/usePitches';
 import { useEffect, useState } from 'react';
 import { IconChevronUp, IconSelector } from '@tabler/icons-react';
 import sortBy from 'lodash/sortby';
-import { Button, Group } from '@mantine/core';
+import {Box, Button, Group} from '@mantine/core';
 
 const columnsData = [
   { accessor: 'pitch_type', title: 'Pitch Type', width: 110, sortable: true },
@@ -48,14 +48,6 @@ interface PlayerTableProps {
   playerId: number | null;
 }
 
-interface DataTableColumn {
-  accessor: string;
-  title: string;
-  width?: number;
-  sortable?: boolean;
-  draggable?: boolean;
-}
-
 export default function PlayerTable({ playerId }: PlayerTableProps) {
   const key = 'draggable';
   const { pitchData, isLoading, error } = usePitches(playerId);
@@ -82,9 +74,8 @@ export default function PlayerTable({ playerId }: PlayerTableProps) {
     columns: columnsData,
   });
 
-  // @ts-ignore
   return (
-    <div>
+    <Box mx={50}>
       <DataTable
         minHeight={150}
         withTableBorder
@@ -115,6 +106,6 @@ export default function PlayerTable({ playerId }: PlayerTableProps) {
       <Group justify="right">
         <Button onClick={resetColumnsOrder}>Reset Column Order</Button>
       </Group>
-    </div>
+    </Box>
   );
 }

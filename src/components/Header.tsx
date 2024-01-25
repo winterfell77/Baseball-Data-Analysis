@@ -34,7 +34,6 @@ import {
 } from '@tabler/icons-react';
 import classes from './Header.module.css';
 import ToggleTheme from '@/src/components/ToggleTheme';
-import Link from 'next/link';
 
 const mockdata = [
   {
@@ -173,7 +172,7 @@ export default function Header() {
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
           <Divider my="sm" />
 
-          <a href="#" className={classes.link}>
+          <a href="/" className={classes.link}>
             Home
           </a>
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
