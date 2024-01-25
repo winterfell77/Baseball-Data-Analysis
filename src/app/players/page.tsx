@@ -2,7 +2,16 @@
 
 import React, { useState } from 'react';
 import Header from '../../components/Header';
-import {Group, Select, Divider, ComboboxItem, OptionsFilter, Box, Container, Paper} from '@mantine/core';
+import {
+  Group,
+  Select,
+  Divider,
+  ComboboxItem,
+  OptionsFilter,
+  Box,
+  Container,
+  Paper,
+} from '@mantine/core';
 import Debug from 'debug';
 import PlayerTable from '@/src/components/PlayerTable';
 import usePlayers from '@/src/hooks/usePlayers';
@@ -58,51 +67,51 @@ export default function Players() {
   return (
     <div className={classes.appcontainer}>
       <Header />
-<Paper mx={400}>
-  <Group justify="center" gap="xl" grow mb="3rem">
-    <Select
-        radius="md"
-        label="Choose Your Player's Id"
-        placeholder="Select ID"
-        data={players_required.map(String)}
-        searchable
-        nothingFoundMessage="Nothing found..."
-        value={selectedPlayerId}
-        onChange={handlePlayerIdChange}
-        comboboxProps={{
-          dropdownPadding: 10,
-          transitionProps: { transition: 'pop', duration: 200 },
-          shadow: 'md',
-        }}
-        withScrollArea={false}
-        styles={{ dropdown: { maxHeight: 200, overflowY: 'auto' } }}
-        allowDeselect={false}
-        filter={optionsFilter}
-        checkIconPosition="right"
-    />
-    <Select
-        radius="md"
-        label="Choose Your Player's Name"
-        placeholder="Select Name"
-        data={playersData.map((player) => player.name_use + ' ' + player.name_last)}
-        searchable
-        nothingFoundMessage="Nothing found..."
-        value={selectedPlayerName}
-        onChange={handlePlayerNameChange}
-        comboboxProps={{
-          dropdownPadding: 10,
-          transitionProps: { transition: 'pop', duration: 200 },
-          shadow: 'md',
-        }}
-        withScrollArea={false}
-        styles={{ dropdown: { maxHeight: 200, overflowY: 'auto' } }}
-        allowDeselect={false}
-        filter={optionsFilter}
-        checkIconPosition="right"
-    />
-  </Group>
-  <Divider my="md" mb="3rem" />
-</Paper>
+      <Paper mx={400}>
+        <Group justify="center" gap="xl" grow mb="3rem">
+          <Select
+            radius="md"
+            label="Choose Your Player's Id"
+            placeholder="Select ID"
+            data={players_required.map(String)}
+            searchable
+            nothingFoundMessage="Nothing found..."
+            value={selectedPlayerId}
+            onChange={handlePlayerIdChange}
+            comboboxProps={{
+              dropdownPadding: 10,
+              transitionProps: { transition: 'pop', duration: 200 },
+              shadow: 'md',
+            }}
+            withScrollArea={false}
+            styles={{ dropdown: { maxHeight: 200, overflowY: 'auto' } }}
+            allowDeselect={false}
+            filter={optionsFilter}
+            checkIconPosition="right"
+          />
+          <Select
+            radius="md"
+            label="Choose Your Player's Name"
+            placeholder="Select Name"
+            data={playersData.map((player) => player.name_use + ' ' + player.name_last)}
+            searchable
+            nothingFoundMessage="Nothing found..."
+            value={selectedPlayerName}
+            onChange={handlePlayerNameChange}
+            comboboxProps={{
+              dropdownPadding: 10,
+              transitionProps: { transition: 'pop', duration: 200 },
+              shadow: 'md',
+            }}
+            withScrollArea={false}
+            styles={{ dropdown: { maxHeight: 200, overflowY: 'auto' } }}
+            allowDeselect={false}
+            filter={optionsFilter}
+            checkIconPosition="right"
+          />
+        </Group>
+        <Divider my="md" mb="3rem" />
+      </Paper>
 
       <PlayerTable playerId={selectedPlayerId ? Number(selectedPlayerId) : null} />
 

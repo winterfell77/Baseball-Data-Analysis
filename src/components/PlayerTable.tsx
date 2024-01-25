@@ -5,7 +5,7 @@ import { PitchInfo, usePitches } from '@/src/hooks/usePitches';
 import { useEffect, useState } from 'react';
 import { IconChevronUp, IconSelector } from '@tabler/icons-react';
 import sortBy from 'lodash/sortby';
-import {Box, Button, Group} from '@mantine/core';
+import { Box, Button, Group } from '@mantine/core';
 
 const columnsData = [
   { accessor: 'pitch_type', title: 'Pitch Type', width: 110, sortable: true },
