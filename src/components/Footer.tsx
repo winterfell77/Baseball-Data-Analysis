@@ -17,6 +17,7 @@ export default function Footer() {
           priority={true}
           style={{ maxWidth: '15%', height: '70' }}
         />
+        <Text ml={32}>An Allen Shen Production</Text>
         <Group gap={0} className={classes.links} justify="flex-end" wrap="nowrap">
           <Text size="sm">Nationals Social Media</Text>
           <Divider orientation="vertical" ml="20" size="sm" mr={10} />

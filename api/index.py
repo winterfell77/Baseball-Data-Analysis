@@ -30,26 +30,6 @@ def close_connection(exception):
 def hello_world():
     return "Pitches Database"
 
-@app.route("/api/tables")
-def list_tables():
-    try:
-        db = get_db()
-        cursor = db.cursor()
-        query = "SELECT name FROM sqlite_master WHERE type='table';"
-        cursor.execute(query)
-        tables = cursor.fetchall()
-        if not tables:
-            print("No tables found in database.")
-            return "No tables found in database."
-        table_names = [table[0] for table in tables]
-        return jsonify(table_names)
-    except sqlite3.Error as e:
-        print(f"Database error: {e}")
-        return f"Database error: {e}"
-    except Exception as e:
-        print(f"General error: {e}")
-        return f"General error: {e}"
-
 @app.route("/api/players")
 def get_players():
     db = get_db()
