@@ -1,2 +1,2 @@
-database(pitches.db) goes inside this folder
+database (pitches.db) goes inside this folder
 

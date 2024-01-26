@@ -22,6 +22,13 @@ Supports all Chromium browsers v108+ (e.g. Chrome, Edge, Opera, etc.)
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/) (v101+)
 - [Safari](https://www.apple.com/safari/) (v15.4+)
 
+
+
+
+### Database Connection
+
+Move the `pitches.db` file to the database folder if not already there.
+
 ### Install and run using your package manager of choice
 
 pnpm
