@@ -1,13 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import classes from './HomePage.module.css';
-import {
-  Container,
-  Button,
-  Group,
-  Text,
-  Space,
-} from '@mantine/core';
+import { Container, Button, Group, Text, Space } from '@mantine/core';
 export default function HomePage() {
   return (
     <div className={classes.appcontainer}>
