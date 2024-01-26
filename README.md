@@ -49,7 +49,7 @@ yarn
 yarn dev
 ```
 
-The website will be available at [http://localhost:3000](http://localhost:3000)
+Once ran, the website will be available at [http://localhost:3000](http://localhost:3000)
 
 The API will be available at [ http://127.0.0.1:5328
 ]( http://127.0.0.1:5328
