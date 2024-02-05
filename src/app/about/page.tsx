@@ -123,7 +123,9 @@ export default function About() {
             <List withPadding>
               <List.Item>Accessible tabs for different pages in the header</List.Item>
               <List.Item>Toggleable light and dark Mode</List.Item>
-              <List.Item>Website is completely mobile friendly with simple navigation burger</List.Item>
+              <List.Item>
+                Website is completely mobile friendly with simple navigation burger
+              </List.Item>
               <List.Item>Easy visit to Nationals Social Media Sites in the Footer</List.Item>
               <List.Item>Home Page for landing page</List.Item>
               <List.Item>Players page for pitcher table</List.Item>
