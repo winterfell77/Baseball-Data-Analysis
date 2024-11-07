@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Debug from 'debug';
 
-const debug = Debug('Nationals:src:app:hooks:usePlayers.tsx');
+const debug = Debug('Baseball:src:app:hooks:usePlayers.tsx');
 
 type Player = {
   player_id: number;

@@ -18,7 +18,7 @@ import usePlayers from '@/src/hooks/usePlayers';
 import Footer from '@/src/components/Footer';
 import classes from '@/src/app/players/Players.module.css';
 
-const debug = Debug(`Nationals:src:app:players:page.jsx`);
+const debug = Debug(`Baseball:src:app:players:page.jsx`);
 
 const players_required = [
   657277, 668678, 543037, 571945, 605135, 664285, 622491, 656605, 641154, 605400, 571578, 680686,

@@ -1,6 +1,6 @@
 # 2023 MLB assignment
 
-<img alt="Logo" align="right" src="https://en.wikipedia.org/wiki/File:Major_League_Baseball_logo.svg" width="20%" />
+<img alt="Logo" align="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Major_League_Baseball_logo.svg/450px-Major_League_Baseball_logo.svg.png" width="20%" />
 
 Allen Shen's 2023 MLB Pitching Data Analysis
 

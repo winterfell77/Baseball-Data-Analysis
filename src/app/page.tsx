@@ -1,26 +1,25 @@
+import { Container, Button, Group, Text, Space, Center } from '@mantine/core';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import classes from './HomePage.module.css';
-import { Container, Button, Group, Text, Space } from '@mantine/core';
+
 export default function HomePage() {
   return (
     <div className={classes.appcontainer}>
       <Header />
       <div className={classes.wrapper}>
         <Container className={classes.inner}>
-          <h1 className={classes.title}>
+          <Center className={classes.title}>
             <Text
               component="span"
               variant="gradient"
               gradient={{ from: 'red', to: 'blue' }}
               inherit
             >
-              Washington Nationals
+              2023 Major League Baseball
             </Text>{' '}
-          </h1>
-          <h1 className={classes.title}>Software Engineering Internship</h1>
-          <h1 className={classes.title}>Web Development Programming Assignment</h1>
-
+          </Center>
+          <Center className={classes.title}>Pitching Data Analysis</Center>
           <Group className={classes.controls} justify="center">
             <Button
               size="xl"
