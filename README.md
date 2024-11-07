@@ -1,11 +1,8 @@
-# Nationals Internship Web Development
+# 2023 MLB assignment
 
-<img alt="Logo" align="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Washington_Nationals_logo.svg/200px-Washington_Nationals_logo.svg.png" width="20%" />
+<img alt="Logo" align="right" src="https://en.wikipedia.org/wiki/File:Major_League_Baseball_logo.svg" width="20%" />
 
-Allen Shen's Washington Nationals Software Engineering Internship Web Development Programming Assignment
-
-
-
+Allen Shen's 2023 MLB Pitching Data Analysis
 
 ## Installation Instructions
 
@@ -48,8 +45,6 @@ yarn dev
 
 Once ran, the website will be available at [http://localhost:3000](http://localhost:3000)
 
-The API will be available at [ http://127.0.0.1:5328
-]( http://127.0.0.1:5328
-)
+The API will be available at [ http://127.0.0.1:5328]( http://127.0.0.1:5328)
 
 
