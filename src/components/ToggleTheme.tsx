@@ -12,7 +12,7 @@ import { notifications } from '@mantine/notifications';
 import Debug from 'debug';
 import { IconMoon, IconSun } from '@tabler/icons-react';
 
-const debug = Debug(`Nationals:src:components:ToggleTheme.jsx`);
+const debug = Debug(`Baseball:src:components:ToggleTheme.jsx`);
 
 export default function ToggleTheme() {
   const { colorScheme, setColorScheme } = useMantineColorScheme();
