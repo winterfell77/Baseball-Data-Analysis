@@ -47,4 +47,10 @@ Once ran, the website will be available at [http://localhost:3000](http://localh
 
 The API will be available at [ http://127.0.0.1:5328]( http://127.0.0.1:5328)
 
+### Website Preview Images
 
+![Alt Text](./public/a.png)
+
+![Alt Text](./public/b.png)
+
+![Alt Text](./public/c.png)
