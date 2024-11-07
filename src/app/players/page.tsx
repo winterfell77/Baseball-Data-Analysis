@@ -1,24 +1,20 @@
 'use client';
 
 import React, { useState } from 'react';
-import Header from '../../components/Header';
 import {
   Group,
   Select,
   Divider,
   ComboboxItem,
   OptionsFilter,
-  Text,
   Title,
   Container,
 } from '@mantine/core';
-import Debug from 'debug';
+import Header from '../../components/Header';
 import PlayerTable from '@/src/components/PlayerTable';
 import usePlayers from '@/src/hooks/usePlayers';
 import Footer from '@/src/components/Footer';
 import classes from '@/src/app/players/Players.module.css';
-
-const debug = Debug(`Baseball:src:app:players:page.jsx`);
 
 const players_required = [
   657277, 668678, 543037, 571945, 605135, 664285, 622491, 656605, 641154, 605400, 571578, 680686,
@@ -26,7 +22,7 @@ const players_required = [
 ];
 
 export default function Players() {
-  const { playersData, isLoading, errors } = usePlayers(players_required);
+  const { playersData } = usePlayers(players_required);
   const [selectedPlayerId, setSelectedPlayerId] = useState<string | null>(null);
   const [selectedPlayerName, setSelectedPlayerName] = useState<string | null>(null);
 
@@ -38,7 +34,7 @@ export default function Players() {
       setSelectedPlayerId(playerId);
       const selectedPlayer = playersData.find((player) => player.player_id.toString() === playerId);
       setSelectedPlayerName(
-        selectedPlayer ? selectedPlayer.name_use + ' ' + selectedPlayer.name_last : null
+        selectedPlayer ? `${selectedPlayer.name_use} ${selectedPlayer.name_last}` : null
       );
     }
   };
@@ -50,7 +46,7 @@ export default function Players() {
     } else {
       setSelectedPlayerName(playerName);
       const selectedPlayer = playersData.find(
-        (player) => player.name_use + ' ' + player.name_last === playerName
+        (player) => `${player.name_use} ${player.name_last}` === playerName
       );
       setSelectedPlayerId(selectedPlayer ? selectedPlayer.player_id.toString() : null);
     }
@@ -93,7 +89,7 @@ export default function Players() {
             radius="md"
             label="Choose Your Player's Name"
             placeholder="Select Name"
-            data={playersData.map((player) => player.name_use + ' ' + player.name_last)}
+            data={playersData.map((player) => `${player.name_use} ${player.name_last}`)}
             searchable
             nothingFoundMessage="Nothing found..."
             value={selectedPlayerName}

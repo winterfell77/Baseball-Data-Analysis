@@ -34,7 +34,7 @@ export default function usePlayers(players: number[]) {
 
   useEffect(() => {
     const fetchPlayersData = async () => {
-      let fetchedErrors: string[] = []; // Explicitly defining the type as string[]
+      const fetchedErrors: string[] = []; // Explicitly defining the type as string[]
       const data: (Player | null)[] = await Promise.all(
         players.map(async (playerId) => {
           const result = await fetchPlayerData(playerId);
